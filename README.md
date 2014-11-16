@@ -1,6 +1,8 @@
 leetcode
 ========
-
+- [Container With Most Water](https://oj.leetcode.com/problems/container-with-most-water/) [PHP](./src/containerWithMostWater/containerWithMostWater.php)
+- [Regular Expression Matching](https://oj.leetcode.com/problems/regular-expression-matching/) [PHP](./src/regularExpressionMatching/regularExpressionMatching.php)
+- [Palindrome Number](https://oj.leetcode.com/problems/palindrome-number/) [PHP](./src/palindromeNumber/palindromeNumber.php)
 - [String to Integer](https://oj.leetcode.com/problems/string-to-integer-atoi/) [PHP](./src/stringToInteger/stringToInteger.php)
 - [Reverse Integer](https://oj.leetcode.com/problems/reverse-integer/) [PHP](./src/reverseInteger/reverseInteger.php)
 - [ZigZag Conversion](https://https://oj.leetcode.com/problems/zigzag-conversion/) [PHP](./src/zigZagConversion/zigZagConversion.php)
