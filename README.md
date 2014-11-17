@@ -1,5 +1,7 @@
 leetcode
 ========
+- [Roman to Integer](https://oj.leetcode.com/problems/roman-to-integer/) [PHP](./src/romanToInteger/romanToInteger.php)
+- [Integer to Roman](https://oj.leetcode.com/problems/integer-to-roman/) [PHP](./src/integerToRoman/integerToRoman.php)
 - [Container With Most Water](https://oj.leetcode.com/problems/container-with-most-water/) [PHP](./src/containerWithMostWater/containerWithMostWater.php)
 - [Regular Expression Matching](https://oj.leetcode.com/problems/regular-expression-matching/) [PHP](./src/regularExpressionMatching/regularExpressionMatching.php)
 - [Palindrome Number](https://oj.leetcode.com/problems/palindrome-number/) [PHP](./src/palindromeNumber/palindromeNumber.php)
