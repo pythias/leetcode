@@ -1,5 +1,7 @@
 leetcode
 ========
+- [3Sum](https://oj.leetcode.com/problems/3sum/) [PHP](./src/3Sum/3Sum.php)
+- [Longest Common Prefix](https://oj.leetcode.com/problems/longest-common-prefix/) [PHP](./src/longestCommonPrefix/longestCommonPrefix.php)
 - [Roman to Integer](https://oj.leetcode.com/problems/roman-to-integer/) [PHP](./src/romanToInteger/romanToInteger.php)
 - [Integer to Roman](https://oj.leetcode.com/problems/integer-to-roman/) [PHP](./src/integerToRoman/integerToRoman.php)
 - [Container With Most Water](https://oj.leetcode.com/problems/container-with-most-water/) [PHP](./src/containerWithMostWater/containerWithMostWater.php)
