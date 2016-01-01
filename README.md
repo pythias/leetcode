@@ -1,5 +1,6 @@
 leetcode
 ========
+- [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) [PHP](./src/20-valid-parentheses/validParentheses.php)
 - [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) [PHP](./src/removeNthFromEnd/removeNthFromEnd.php)
 - [4Sum](https://oj.leetcode.com/problems/4sum/) [PHP](./src/fourSum/fourSum.php)
 - [3Sum Closest](https://oj.leetcode.com/problems/3sum-closest/) [PHP](./src/threeSumClosest/threeSumClosest.php)
