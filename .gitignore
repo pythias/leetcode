@@ -1,0 +1,5 @@
+# JetBrains IDE
+.idea
+
+# OS
+.DS_Store
