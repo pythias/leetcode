@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cat file.txt | awk '{
+awk '{
     for (i = 1; i <= NF; i++) {
         values[FNR, i] = $i
     }
@@ -14,5 +14,4 @@ cat file.txt | awk '{
         }
         print line
     }
-}
-'
+}' file.txt
