@@ -1,5 +1,8 @@
 # JetBrains IDE
 .idea
 
+# Rust
+target/
+
 # OS
 .DS_Store
