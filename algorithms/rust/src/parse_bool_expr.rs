@@ -18,63 +18,33 @@ const OR: u8 = 124;
 const NOT: u8 = 33;
 const TRUE: u8 = 116;
 const FALSE: u8 = 102;
+const ZERO: u8 = 0;
 
 fn parse_bool_expr(op: u8, chars: &[u8], offset: &mut usize) -> bool {
     let mut v: Option<bool> = None;
-    let mut op1: u8 = 0;
+    let mut op1: u8 = ZERO;
     loop {
         if *offset >= chars.len() {
-            return v.eq(&Some(true));
+            return value(v);
         }
 
         let c = chars[*offset];
         *offset += 1;
 
         match c {
-            LEFT => {
-                let result= parse_bool_expr(op1, chars, offset);
-                match op {
-                    OR => {
-                        v = or(v, result)
-                    },
-                    AND => {
-                        v = and(v, result)
-                    },
-                    NOT => {
-                        v = Some(!result);
-                    },
-                    0 => {
-                        v = Some(result);
-                    },
-                    _ => {},
-                }
-            },
-            RIGHT => {
-                return v.eq(&Some(true));
-            },
-            AND | OR | NOT => { op1 = c },
-            TRUE => {
-                match op {
-                    AND => v = and(v, true),
-                    OR => v = or(v, true),
-                    NOT => v = Some(false),
-                    _ => v = Some(true),
-                }
-            },
-            FALSE => {
-                match op {
-                    AND => v = and(v, false),
-                    OR => v = or(v, false),
-                    NOT => v =Some(true),
-                    _ => v = Some(false),
-                }
-            },
+            LEFT => v = ops(op, v, parse_bool_expr(op1, chars, offset)),
+            RIGHT => return value(v),
+            AND | OR | NOT => op1 = c,
+            TRUE => v = ops(op, v, true),
+            FALSE => v = ops(op, v, false),
             COMMA => { },
-            _ => {
-                return v.eq(&Some(true));
-            },
+            _ => return value(v),
         }
     }
+}
+
+fn value(v: Option<bool>) -> bool {
+    v.eq(&Some(true))
 }
 
 fn or(v0: Option<bool>, v1: bool) -> Option<bool> {
@@ -90,6 +60,16 @@ fn and(v0: Option<bool>, v1: bool) -> Option<bool> {
         Some(v1)
     } else {
         Some(v0.eq(&Some(true)) && v1)
+    }
+}
+
+fn ops(op: u8, v0: Option<bool>, v1: bool) -> Option<bool> {
+    match op {
+        OR => or(v0, v1),
+        AND => and(v0, v1),
+        NOT => Some(!v1),
+        ZERO => Some(v1),
+        _ => v0,
     }
 }
 
