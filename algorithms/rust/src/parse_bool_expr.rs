@@ -10,19 +10,9 @@ impl Solution {
     }
 }
 
-const LEFT: u8 = 40;
-const RIGHT: u8 = 41;
-const COMMA: u8 = 44;
-const AND: u8 = 38;
-const OR: u8 = 124;
-const NOT: u8 = 33;
-const TRUE: u8 = 116;
-const FALSE: u8 = 102;
-const ZERO: u8 = 0;
-
 fn parse_bool_expr(op: u8, chars: &[u8], offset: &mut usize) -> bool {
     let mut v: Option<bool> = None;
-    let mut op1: u8 = ZERO;
+    let mut op1: u8 = 0;
     loop {
         if *offset >= chars.len() {
             return value(v);
@@ -32,12 +22,12 @@ fn parse_bool_expr(op: u8, chars: &[u8], offset: &mut usize) -> bool {
         *offset += 1;
 
         match c {
-            LEFT => v = ops(op, v, parse_bool_expr(op1, chars, offset)),
-            RIGHT => return value(v),
-            AND | OR | NOT => op1 = c,
-            TRUE => v = ops(op, v, true),
-            FALSE => v = ops(op, v, false),
-            COMMA => { },
+            b'(' => v = ops(op, v, parse_bool_expr(op1, chars, offset)),
+            b')' => return value(v),
+            b'&' | b'|' | b'!' => op1 = c,
+            b't' => v = ops(op, v, true),
+            b'f' => v = ops(op, v, false),
+            b',' => { },
             _ => return value(v),
         }
     }
@@ -65,10 +55,10 @@ fn and(v0: Option<bool>, v1: bool) -> Option<bool> {
 
 fn ops(op: u8, v0: Option<bool>, v1: bool) -> Option<bool> {
     match op {
-        OR => or(v0, v1),
-        AND => and(v0, v1),
-        NOT => Some(!v1),
-        ZERO => Some(v1),
+        b'|' => or(v0, v1),
+        b'&' => and(v0, v1),
+        b'!' => Some(!v1),
+        0 => Some(v1),
         _ => v0,
     }
 }
