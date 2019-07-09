@@ -1,0 +1,30 @@
+impl Solution {
+    pub fn defang_i_paddr(address: String) -> String {
+        let parts: Vec<_> = address.split('.').collect();
+        if parts.len() != 4 {
+            return String::from("");
+        }
+
+        for i in 0..4 {
+            let t: i32 = String::from(parts[i]).parse().unwrap();
+            if t < 0 || t > 255 {
+                return String::from("");
+            }
+        }
+
+        return parts.join("[.]");
+    }
+}
+
+pub struct Solution {}
+
+#[cfg(test)]
+mod tests {
+    use super::Solution;
+
+    #[test]
+    fn test0() {
+        assert_eq!(Solution::defang_i_paddr(String::from("1.0.0.0")), "1[.]0[.]0[.]0");
+        assert_eq!(Solution::defang_i_paddr(String::from("1.255.0.0")), "1[.]255[.]0[.]0");
+    }
+}
