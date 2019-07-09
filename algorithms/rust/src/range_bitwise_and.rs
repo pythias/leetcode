@@ -12,18 +12,23 @@ impl Solution {
             return m;
         }
 
-        let f0 = (m as f32).log2();
-        let f1 = (n as f32).log2();
-        if (f1.floor() - f0.floor()) >= 1.0 {
+        let f0 = (m as f32).log2().floor() as i32;
+        let f1 = (n as f32).log2().floor() as i32;
+        if (f1 - f0) >= 1 {
             return 0;
         }
 
-        let mut v = n;
-        for i in m..n {
-            v &= i
+        let mut x = 0;
+        for i in (0..(f1 + 1)).rev() {
+            let t = 1 << i;
+            if (t & n) != (t & m) {
+                return m & n & x;
+            }
+
+            x += t;
         }
 
-        return v;
+        0
     }
 }
 
@@ -40,7 +45,7 @@ mod tests {
 
     #[test]
     fn test1() {
-        assert_eq!(Solution::range_bitwise_and(0, 1), 0);
+        assert_eq!(Solution::range_bitwise_and(5, 6), 4);
     }
 
     #[test]
