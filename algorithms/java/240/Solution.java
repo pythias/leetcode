@@ -1,4 +1,4 @@
-package com.duo.leetcode;
+package duo.leetcode.p240;
 
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {

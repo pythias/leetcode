@@ -1,3 +1,5 @@
+package duo.leetcode.p945;
+
 import java.util.Arrays;
 
 class Solution {

@@ -1,3 +1,5 @@
+package duo.leetcode.p268;
+
 class Solution {
     public int missingNumber(int[] nums) {
         int len = nums.length;

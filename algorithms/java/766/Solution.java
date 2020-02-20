@@ -1,3 +1,5 @@
+package duo.leetcode.p766;
+
 class Solution {
     public boolean isToeplitzMatrix(int[][] matrix) {
         for (int i = 1; i < matrix.length; i++) {
