@@ -2,7 +2,7 @@ package com.duo.leetcode._0000._82;
 
 import com.duo.leetcode.Algorithm;
 
-public class Solution implements Algorithm {
+public class ListDeleteDuplicate implements Algorithm {
     public ListNode deleteDuplicates(ListNode head) {
         ListNode p = null;
         ListNode c = head;
