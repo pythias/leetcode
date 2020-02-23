@@ -1,9 +1,11 @@
-package duo.leetcode.p448;
+package com.duo.leetcode._0400._448;
+
+import com.duo.leetcode.Algorithm;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class Solution {
+public class Solution implements Algorithm {
     public List<Integer> findDisappearedNumbers(int[] nums) {
         int[] all = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
@@ -23,9 +25,8 @@ class Solution {
         return missing;
     }
 
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        System.out.println(solution.findDisappearedNumbers(new int[] {1, 2, 3, 1, 5}));
-        System.out.println(solution.findDisappearedNumbers(new int[] {2, 3, 3, 5, 2, 3, 1, 8}));
+    public void run() {
+        System.out.println(this.findDisappearedNumbers(new int[] {1, 2, 3, 1, 5}));
+        System.out.println(this.findDisappearedNumbers(new int[] {2, 3, 3, 5, 2, 3, 1, 8}));
     }
 }

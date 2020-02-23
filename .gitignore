@@ -1,9 +1,13 @@
 # IDE
 .idea/
 .vscode/
+.settings/
+.classpath
+.project
 
 # Rust
 target/
 
 # OS
 .DS_Store
+

@@ -1,19 +1,8 @@
-package duo.leetcode.p80;
+package com.duo.leetcode._0000._82;
 
-class ListNode {
-    int val;
-    ListNode next;
+import com.duo.leetcode.Algorithm;
 
-    ListNode(int x) {
-        val = x;
-    }
-}
-
-/**
- * Definition for singly-linked list. public class ListNode { int val; ListNode
- * next; ListNode(int x) { val = x; } }
- */
-class Solution {
+public class Solution implements Algorithm {
     public ListNode deleteDuplicates(ListNode head) {
         ListNode p = null;
         ListNode c = head;
@@ -67,16 +56,7 @@ class Solution {
         return head;
     }
 
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        print(solution.deleteDuplicates(createNode(new int[] { 1, 4, 4, 4, 7, 11, 11, 11, 15, 15 })));
-        print(solution.deleteDuplicates(createNode(new int[] { 1, 1 })));
-        print(solution.deleteDuplicates(createNode(new int[] { 1, 1, 2, 2 })));
-        print(solution.deleteDuplicates(createNode(new int[] { 1, 1, 3, 4, 5, 5 })));
-        print(solution.deleteDuplicates(createNode(new int[] { 2, 3, 4, 5 })));
-    }
-
-    private static ListNode createNode(int[] values) {
+    private ListNode createNode(int[] values) {
         ListNode head = null;
         ListNode current = null;
         for (int i : values) {
@@ -92,7 +72,7 @@ class Solution {
         return head;
     }
 
-    private static void print(ListNode node) {
+    private void print(ListNode node) {
         StringBuilder sb = new StringBuilder();
         ListNode head = node;
         while (true) {
@@ -106,5 +86,13 @@ class Solution {
         }
 
         System.out.println(sb.toString());
+    }
+
+    public void run() {
+        this.print(this.deleteDuplicates(this.createNode(new int[] { 1, 4, 4, 4, 7, 11, 11, 11, 15, 15 })));
+        this.print(this.deleteDuplicates(this.createNode(new int[] { 1, 1 })));
+        this.print(this.deleteDuplicates(this.createNode(new int[] { 1, 1, 2, 2 })));
+        this.print(this.deleteDuplicates(this.createNode(new int[] { 1, 1, 3, 4, 5, 5 })));
+        this.print(this.deleteDuplicates(this.createNode(new int[] { 2, 3, 4, 5 })));
     }
 }

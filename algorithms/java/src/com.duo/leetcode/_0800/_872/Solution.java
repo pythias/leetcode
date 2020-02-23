@@ -1,15 +1,10 @@
-package duo.leetcode.p872;
+package com.duo.leetcode._0800._872;
 
 import java.util.ArrayList;
 
-class TreeNode { 
-    int val; 
-    TreeNode left; 
-    TreeNode right; 
-    TreeNode(int x) { val = x; } 
-}
+import com.duo.leetcode.Algorithm;
 
-class Solution {
+public class Solution implements Algorithm {
     public boolean leafSimilar(TreeNode root1, TreeNode root2) {
         ArrayList<Integer> leafs1 = new ArrayList<Integer>();
         this.getLeafs(root1, leafs1);
@@ -46,5 +41,9 @@ class Solution {
         if (root.left == null && root.right == null) {
             leafs.add(root.val);
         }
+    }
+
+    public void run() {
+
     }
 }

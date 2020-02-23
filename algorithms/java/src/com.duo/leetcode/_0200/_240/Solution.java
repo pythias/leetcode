@@ -1,6 +1,8 @@
-package duo.leetcode.p240;
+package com.duo.leetcode._0200._240;
 
-class Solution {
+import com.duo.leetcode.Algorithm;
+
+public class Solution implements Algorithm {
     public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix.length == 0 || matrix[0].length == 0) {
             return false;
@@ -37,16 +39,15 @@ class Solution {
         return false;
     }
 
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        System.out.println(solution.searchMatrix(new int[][] { { 1, 4, 7, 11, 15 }, { 2, 5, 8, 12, 19 },
+    public void run() {
+        System.out.println(this.searchMatrix(new int[][] { { 1, 4, 7, 11, 15 }, { 2, 5, 8, 12, 19 },
                 { 3, 6, 9, 16, 22 }, { 10, 13, 14, 17, 24 }, { 18, 21, 23, 26, 30 } }, 5));
-        System.out.println(solution.searchMatrix(new int[][] { { 1, 4, 7, 11, 15 }, { 2, 5, 8, 12, 19 },
+        System.out.println(this.searchMatrix(new int[][] { { 1, 4, 7, 11, 15 }, { 2, 5, 8, 12, 19 },
                 { 3, 6, 9, 16, 22 }, { 10, 13, 14, 17, 24 }, { 18, 21, 23, 26, 30 } }, 18));
-        System.out.println(solution.searchMatrix(new int[][] { { 1, 4, 7, 11, 15 }, { 2, 5, 8, 12, 19 },
+        System.out.println(this.searchMatrix(new int[][] { { 1, 4, 7, 11, 15 }, { 2, 5, 8, 12, 19 },
                 { 3, 6, 9, 16, 22 }, { 10, 13, 14, 17, 24 }, { 18, 21, 23, 26, 30 } }, 19));
-        System.out.println(solution.searchMatrix(new int[][] { { 1, 4, 7, 11, 15 }, { 2, 5, 8, 12, 19 },
+        System.out.println(this.searchMatrix(new int[][] { { 1, 4, 7, 11, 15 }, { 2, 5, 8, 12, 19 },
                 { 3, 6, 9, 16, 22 }, { 10, 13, 14, 17, 24 }, { 18, 21, 23, 26, 30 } }, 25));
-        System.out.println(solution.searchMatrix(new int[][] { { 1 }, { 3 }, { 5 } }, 5));
+        System.out.println(this.searchMatrix(new int[][] { { 1 }, { 3 }, { 5 } }, 5));
     }
 }
