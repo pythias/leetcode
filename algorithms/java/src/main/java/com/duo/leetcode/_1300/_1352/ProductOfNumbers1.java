@@ -19,6 +19,7 @@ public class ProductOfNumbers1 implements Algorithm {
     public void add(int num) {
         this.lastNumber = num;
         this.size++;
+
         if (num == 0) {
             this.lastZeroAt = this.size;
             this.products.add(1);
@@ -40,17 +41,28 @@ public class ProductOfNumbers1 implements Algorithm {
             return this.lastNumber;
         }
 
+        if (k == this.size) {
+            return this.products.get(this.size - 1);
+        }
+
         return this.products.get(this.size - 1) / this.products.get(this.size - 1 - k);
     }
 
     public void run() {
-        this.add(3);
-        this.add(0);
-        this.add(2);
-        this.add(5);
+        this.add(7);
+        System.out.println(this.getProduct(1));
+        System.out.println(this.getProduct(1));
         this.add(4);
-        System.out.println(this.getProduct(2));
+        this.add(5);
         System.out.println(this.getProduct(3));
+        this.add(4);
         System.out.println(this.getProduct(4));
+        this.add(3);
+        System.out.println(this.getProduct(4));
+        this.add(8);
+        System.out.println(this.getProduct(1));
+        System.out.println(this.getProduct(6));
+        this.add(2);
+        System.out.println(this.getProduct(3));
     }
 }
