@@ -16,10 +16,13 @@ public class Main {
 
         String[] ids = input.split(",");
         for (String id : ids) {
-            String packageName = (id.equals("all") ? "com.duo.leetcode." : this.getAlgorithmClass(id));
             try {
                 for (final ClassPath.ClassInfo info : sortedClasses) {
-                    if (!info.getName().startsWith(packageName)) {
+                    if (!info.getName().startsWith("com.duo.leetcode.")) {
+                        continue;
+                    }
+
+                    if (!id.equals("all") && !info.getName().endsWith(".".concat(id))) {
                         continue;
                     }
 
@@ -38,13 +41,8 @@ public class Main {
         }
     }
 
-    private String getAlgorithmClass(String id) {
-        int i = Integer.parseInt(id);
-        return String.format("com.duo.leetcode._%02d00._%s.", i / 100, id);
-    }
-
     public static void main(String[] args) throws IOException {
         Main main = new Main();
-        main.run("all");
+        main.run("MaxProfit");
     }
 }
