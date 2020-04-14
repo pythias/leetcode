@@ -2,8 +2,6 @@ package com.duo.leetcode._0100._169;
 
 import com.duo.leetcode.Algorithm;
 
-import java.util.HashMap;
-
 public class Solution implements Algorithm {
     public int majorityElement(int[] nums) {
         int count = 0;
