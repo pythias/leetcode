@@ -19,6 +19,7 @@ public class DiameterOfBinaryTree implements Algorithm {
         int right = this.diameter(root.right);
         int length = left + right + 1;
 
+        // 可以不过跟节点
         this.result = Math.max(this.result, length);
 
         return 1 + Math.max(left, right);
