@@ -1,3 +1,7 @@
+/**
+ * 7. Reverse Integer
+ * https://leetcode.com/problems/reverse-integer/
+ */
 impl Solution {
     pub fn reverse(x: i32) -> i32 {
         if x == 0 {
@@ -32,7 +36,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn reverse() {
+    fn test_7() {
         assert_eq!(321, Solution::reverse(123));
         assert_eq!(-54, Solution::reverse(-450));
         

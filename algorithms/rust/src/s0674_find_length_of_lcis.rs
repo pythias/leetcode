@@ -1,3 +1,7 @@
+/**
+ * 674. Longest Continuous Increasing Subsequence
+ * https://leetcode.com/problems/longest-continuous-increasing-subsequence/
+ */
 impl Solution {
     pub fn find_length_of_lcis(nums: Vec<i32>) -> i32 {
         let l = nums.len();
@@ -30,7 +34,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test0() {
+    fn test_674() {
         assert_eq!(Solution::find_length_of_lcis(vec![1, 3, 5, 7, 4]), 4);
         assert_eq!(Solution::find_length_of_lcis(vec![1, 1, 1]), 1);
         assert_eq!(Solution::find_length_of_lcis(vec![2, 1]), 1);

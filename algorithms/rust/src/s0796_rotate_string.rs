@@ -1,3 +1,7 @@
+/**
+ * 796. Rotate String
+ * https://leetcode.com/problems/rotate-string/
+ */
 impl Solution {
     pub fn rotate_string(a: String, b: String) -> bool {
         if a.is_empty() {
@@ -35,22 +39,10 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test0() {
+    fn test_796() {
         assert_eq!(Solution::rotate_string(String::from("abcdce"), String::from("cdceab")), true);
-    }
-
-    #[test]
-    fn test1() {
         assert_eq!(Solution::rotate_string(String::from("abcdce"), String::from("ceabcd")), true);
-    }
-
-    #[test]
-    fn test2() {
         assert_eq!(Solution::rotate_string(String::from("abcde"), String::from("abced")), false);
-    }
-
-    #[test]
-    fn test3() {
         assert_eq!(Solution::rotate_string(String::from("abcdce"), String::from("cdceba")), false);
     }
 }

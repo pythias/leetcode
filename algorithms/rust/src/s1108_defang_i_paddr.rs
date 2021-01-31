@@ -1,3 +1,7 @@
+/**
+ * 1108. Defanging an IP Address
+ * https://leetcode.com/problems/defanging-an-ip-address/
+ */
 impl Solution {
     pub fn defang_i_paddr(address: String) -> String {
         let parts: Vec<_> = address.split('.').collect();
@@ -20,10 +24,10 @@ pub struct Solution {}
 
 #[cfg(test)]
 mod tests {
-    use super::Solution;
+    use super::*;
 
     #[test]
-    fn test0() {
+    fn test_1108() {
         assert_eq!(Solution::defang_i_paddr(String::from("1.0.0.0")), "1[.]0[.]0[.]0");
         assert_eq!(Solution::defang_i_paddr(String::from("1.255.0.0")), "1[.]255[.]0[.]0");
     }

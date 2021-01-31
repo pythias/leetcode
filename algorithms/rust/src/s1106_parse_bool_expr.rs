@@ -1,3 +1,7 @@
+/**
+ * 1106. Parsing A Boolean Expression
+ * https://leetcode.com/problems/parsing-a-boolean-expression/
+ */
 impl Solution {
     pub fn parse_bool_expr(expression: String) -> bool {
         let len: usize = expression.len();
@@ -70,21 +74,13 @@ mod tests {
     use super::Solution;
 
     #[test]
-    fn test0() {
+    fn test_1106() {
         assert_eq!(Solution::parse_bool_expr(String::from("!(t)")), false);
         assert_eq!(Solution::parse_bool_expr(String::from("|(f,t)")), true);
         assert_eq!(Solution::parse_bool_expr(String::from("|(f,f)")), false);
         assert_eq!(Solution::parse_bool_expr(String::from("&(t,f,t)")), false);
         assert_eq!(Solution::parse_bool_expr(String::from("|(&(t,f,t),!(t))")), false);
-    }
-
-    #[test]
-    fn test1() {
         assert_eq!(Solution::parse_bool_expr(String::from("!(&(!(&(f)),&(t,f,t)))")), true);
-    }
-
-    #[test]
-    fn test2() {
         assert_eq!(Solution::parse_bool_expr(String::from("!(&(&(!(&(f)),&(t),|(f,f,t)),&(t),&(t,t,f)))")), true);
     }
 }
