@@ -5,7 +5,7 @@ matrix:
       script:
         - mvn verify -f algorithms/java/pom.xml
     - language: rust
-      before_install:
-        - cp algorithms/rust/src/s????_* algorithms/rust/tests
+      before_script:
+        - cp ./algorithms/rust/src/s????_*.rs ./algorithms/rust/tests
       script:
         - cargo test --verbose
