@@ -9,12 +9,12 @@ import java.util.Arrays;
 public class TestShortestToChar {
     @Test
     public void test0() {
-        this.test(new int[]{3, 2, 1, 0, 1, 0, 0, 1, 2, 2, 1, 0},"loveleetcode", 'e');
+        this.test(new int[]{3, 2, 1, 0, 1, 0, 0, 1, 2, 2, 1, 0}, "loveleetcode", 'e');
     }
 
     @Test
     public void test1() {
-        this.test(new int[]{1, 0, 1, 1, 0, 1, 2},"console", 'o');
+        this.test(new int[]{1, 0, 1, 1, 0, 1, 2}, "console", 'o');
     }
 
     private void test(int[] e, String S, char c) {
