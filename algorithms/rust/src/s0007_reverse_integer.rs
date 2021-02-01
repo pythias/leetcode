@@ -36,7 +36,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_7() {
+    fn test_0007() {
         assert_eq!(321, Solution::reverse(123));
         assert_eq!(-54, Solution::reverse(-450));
         

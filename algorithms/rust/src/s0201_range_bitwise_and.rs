@@ -43,7 +43,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_201() {
+    fn test_0201() {
         assert_eq!(Solution::range_bitwise_and(5, 7), 4);
         assert_eq!(Solution::range_bitwise_and(5, 6), 4);
         assert_eq!(Solution::range_bitwise_and(5, 8), 0);

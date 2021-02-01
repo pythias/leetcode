@@ -42,7 +42,7 @@ mod tests {
     use super::Solution;
 
     #[test]
-    fn test_575() {
+    fn test_0575() {
         assert_eq!(Solution::distribute_candies(7, 3), vec![2, 2, 3]);
         assert_eq!(Solution::distribute_candies(10, 3), vec![5, 2, 3]);
         assert_eq!(Solution::distribute_candies(11, 3), vec![5, 3, 3]);

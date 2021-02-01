@@ -39,7 +39,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_796() {
+    fn test_0796() {
         assert_eq!(Solution::rotate_string(String::from("abcdce"), String::from("cdceab")), true);
         assert_eq!(Solution::rotate_string(String::from("abcdce"), String::from("ceabcd")), true);
         assert_eq!(Solution::rotate_string(String::from("abcde"), String::from("abced")), false);

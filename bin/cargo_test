@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+    echo "Index can't be empty"
+    exit 1;
+fi
+
+DIR="$( cd "$( dirname "$( dirname "$0" )")" && pwd )"
+
+NUM=$1
+rm -f ${DIR}/algorithms/rust/tests/s*.rs
+cp ${DIR}/algorithms/rust/src/s${NUM}_*.rs ${DIR}/algorithms/rust/tests/
+cargo test test_${NUM}

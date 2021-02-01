@@ -34,7 +34,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_674() {
+    fn test_0674() {
         assert_eq!(Solution::find_length_of_lcis(vec![1, 3, 5, 7, 4]), 4);
         assert_eq!(Solution::find_length_of_lcis(vec![1, 1, 1]), 1);
         assert_eq!(Solution::find_length_of_lcis(vec![2, 1]), 1);

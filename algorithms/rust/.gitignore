@@ -1,2 +1,3 @@
 debug/
+tests/
 .rustc_info.json
