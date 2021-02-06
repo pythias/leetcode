@@ -8,7 +8,7 @@ use std::cmp::max;
 impl Solution {
     pub fn character_replacement(s: String, k: i32) -> i32 {        
         let length = s.len();
-        let byes = s.as_bytes();
+        let bytes = s.as_bytes();
         let mut counts = [0; 26];
         let mut left = 0;
         let mut right = 0;
@@ -19,11 +19,11 @@ impl Solution {
                 return (right - left) as i32;
             }
             
-            let i = ord(byes[right]);
+            let i = ord(bytes[right]);
             counts[i] += 1;
             max1 = max(max1, counts[i]);
             if (right - left + 1) > (max1 + k_usize) {
-                let j = ord(byes[left]);
+                let j = ord(bytes[left]);
                 counts[j] -= 1;
                 left += 1;
             }
