@@ -11,7 +11,6 @@ impl Solution {
                 }
 
                 if i > 1 && nums[i - 2] > nums[i] && (i < nums.len() - 1) && nums[i - 1] > nums[i + 1] {
-                    println!("{:?} A:{:?} > {:?} B:{:?} > {:?}", i, nums[i - 2], nums[i], nums[i - 1], nums[i + 1]);
                     return false;
                 }
             }
