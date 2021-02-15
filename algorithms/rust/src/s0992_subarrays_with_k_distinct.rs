@@ -1,10 +1,41 @@
 //992. K 个不同整数的子数组
 //https://leetcode-cn.com/problems/subarrays-with-k-different-integers/
-//少读了连续的字眼："contiguous, not necessarily distinct"
+//1. 连续："contiguous, not necessarily distinct"
+//2. 还有一个隐形的条件: "1 <= A[i] <= A.length"
 impl Solution {
     //窗口解法
     pub fn subarrays_with_k_distinct(a: Vec<i32>, k: i32) -> i32 {
-        
+        let len = a.len();
+        let uk = k as usize;
+        let mut all = 0;
+        for i in 0..len {
+            let mut count = 0;
+            let mut sub = Vec![0; len];
+            if sub[a[i]] == 0 {
+                count += 1;
+            }
+            sub[a[i]] += 1;
+
+            for j in (i+1)..len {
+                if sub[a[j]] == 0 {
+                    count += 1;
+                }
+                sub[a[j]] += 1;
+
+                if !sub.contains_key(&a[j]) {
+                    if sub.len() == uk {
+                        break;
+                    }
+                    sub.insert(a[j], 0);
+                }
+                
+                if sub.contains_key(&a[j]) && sub.len() == uk {
+                    count += 1;
+                }
+            }
+        }
+
+        return count;
     }
 
     //最笨解法
