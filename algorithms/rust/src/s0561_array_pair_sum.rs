@@ -1,14 +1,8 @@
 impl Solution {
     pub fn array_pair_sum(nums: Vec<i32>) -> i32 {
-        let mut sum = 0;
         let mut n1 = nums;
         n1.sort();
-        
-        for i in (0..n1.len()).step_by(2) {
-            sum += n1[i];
-        }
-        
-        return sum;
+        return n1.chunks(2).fold(0, |sum, x| sum + x[0]);
     }
 }
 
