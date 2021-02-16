@@ -9,8 +9,10 @@ impl Solution {
         let uk = k as usize;
         let mut all = 0;
         for i in 0..len {
+            let mut left = 0;
+            let mut right = 0;
             let mut count = 0;
-            let mut sub = Vec![0; len];
+            let mut sub = vec![0; len];
             if sub[a[i]] == 0 {
                 count += 1;
             }
@@ -22,49 +24,28 @@ impl Solution {
                 }
                 sub[a[j]] += 1;
 
-                if !sub.contains_key(&a[j]) {
+                if sub.contains(a[j]) {
                     if sub.len() == uk {
+                        right = count;
                         break;
                     }
-                    sub.insert(a[j], 0);
+
+                    if sub.len() == (uk - 1) && left == 0 {
+                        left = count;
+                    }
+
+                    sub[a[j]] += 1;
                 }
                 
-                if sub.contains_key(&a[j]) && sub.len() == uk {
+                if sub.contains(&a[j]) && sub.len() == uk {
                     count += 1;
                 }
             }
+
+            all += right - left;
         }
 
-        return count;
-    }
-
-    //最笨解法
-    pub fn s1(a: Vec<i32>, k: i32) -> i32 {
-        let len = a.len();
-        let uk = k as usize;
-        let mut count = 0;
-        for i in 0..len {
-            let mut sub = std::collections::HashMap::new();
-            sub.insert(a[i], 0);
-            if sub.len() == uk {
-                count += 1;
-            }
-
-            for j in (i+1)..len {
-                if !sub.contains_key(&a[j]) {
-                    if sub.len() == uk {
-                        break;
-                    }
-                    sub.insert(a[j], 0);
-                }
-                
-                if sub.contains_key(&a[j]) && sub.len() == uk {
-                    count += 1;
-                }
-            }
-        }
-
-        return count;
+        return all;
     }
 }
 
