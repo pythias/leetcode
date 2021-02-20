@@ -10,8 +10,6 @@ impl Solution {
             cost.push((s_bytes[i] as i32 - t_bytes[i] as i32).abs());
         }
 
-        println!("c {:?}", cost);
-
         let mut max = 0;
         for i in 0..length {
             let mut sub = 0;
