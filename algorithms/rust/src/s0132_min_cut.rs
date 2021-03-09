@@ -1,5 +1,3 @@
-use std::collections::HashMap;
-
 impl Solution {
     pub fn min_cut(s: String) -> i32 {
         Self::get_min_cut(s.as_bytes()) - 1
@@ -13,12 +11,13 @@ impl Solution {
 
         let mut min = len as i32;
         for i in 0..len {
-            for j in (i+1)..len {
-                if bytes[j] != bytes[i] {
+            for j in 0..(len-i) {
+                let to = len - j - 1;
+                if bytes[to] != bytes[i] {
                     continue;
                 }
 
-                if !Self::is_palindrome(&bytes[i..=j]) {
+                if !Self::is_palindrome(&bytes[i..to]) {
                     continue;
                 }
 
@@ -28,8 +27,8 @@ impl Solution {
                     left = Self::get_min_cut(&bytes[0..i]);
                 }
 
-                if j < (len - 1) {
-                    right = Self::get_min_cut(&bytes[(j+1)..len]);
+                if to < (len - 1) {
+                    right = Self::get_min_cut(&bytes[(to+1)..len]);
                 }
 
                 if left == 0 && right == 0 {
@@ -58,8 +57,6 @@ impl Solution {
         true
     }
 }
-
-
 
 pub struct Solution {}
 
