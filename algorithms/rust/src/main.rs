@@ -11,8 +11,10 @@ mod s0132_min_cut;
 mod s1047_remove_duplicates;
 mod s0131_partition;
 mod s0224_calculate;
+mod s0227_calculate;
+mod s0705_design_hashset;
 
 fn main() {
-    println!("{:?}", String::from("09+-() ").into_bytes());
+    println!("{:?}", String::from("09+-*/ ").into_bytes());
     println!("Hello, world!");
 }
