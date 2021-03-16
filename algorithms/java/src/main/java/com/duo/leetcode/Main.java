@@ -22,7 +22,7 @@ public class Main {
                         continue;
                     }
 
-                    if (!id.equals("all") && !info.getName().endsWith(".".concat(id))) {
+                    if (!id.equals("all") && !info.getName().endsWith(".".concat(id)) && !info.getName().endsWith(".".concat(id).concat(".Solution"))) {
                         continue;
                     }
 
@@ -43,6 +43,6 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Main main = new Main();
-        main.run("Parenthesis");
+        main.run("_59");
     }
 }

@@ -49,7 +49,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_0227() {
+    fn test_0224() {
         assert_eq!(Solution::calculate(String::from("1 +3 *2 / 2 + 3")), 7);
         assert_eq!(Solution::calculate(String::from("1 +2 *3 / 2 + 3")), 7);
         assert_eq!(Solution::calculate(String::from("1 +2 *3 / -2 + 3")), 1);
